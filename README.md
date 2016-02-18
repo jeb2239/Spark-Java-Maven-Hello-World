@@ -1,4 +1,4 @@
-# Spark-Java-On-CSIL
+# Spark-Java-Maven-Hello-World
 
 
 Starter code for a Hello World web app using the Spark Java framework
@@ -15,3 +15,4 @@ To compile and build an executable jar, do this from top level directory:
 To run that jar:
 
   java -jar target/HelloSpark-1.0-jar-with-dependencies.jar 
+
