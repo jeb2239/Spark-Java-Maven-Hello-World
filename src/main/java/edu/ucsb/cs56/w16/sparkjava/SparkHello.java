@@ -1,3 +1,5 @@
+package edu.ucsb.cs56.w16.sparkjava;
+
 import static spark.Spark.*;
 
 public class SparkHello {
