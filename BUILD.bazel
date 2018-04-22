@@ -1,0 +1,26 @@
+
+load("//:generate_workspace.bzl", "generated_java_libraries")
+generated_java_libraries()
+
+
+java_binary(
+    name = "ProjectRunner",
+    srcs = glob(["src/main/java/edu/ucsb/cs56/w16/sparkjava/*.java"]),
+    main_class = "edu.ucsb.cs56.w16.sparkjava.SparkHello",
+    deps = ["@com_sparkjava_spark_core//jar","@org_codehaus_plexus_plexus_utils//jar"],
+    runtime_deps=["@com_sparkjava_spark_core//jar"]
+    
+)
+
+
+java_library(
+    name="tester",
+    srcs = glob(["src/test/java/edu/ucsb/cs56/w16/sparkjava/*.java"]),
+    deps = ["@com_sparkjava_spark_core//jar","@junit_junit//jar"]
+)
+
+java_test(
+    name = "test",
+    size="small",
+    runtime_deps = ["@com_sparkjava_spark_core//jar",":tester"]
+)
